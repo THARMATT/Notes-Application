@@ -1,0 +1,3 @@
+[submodule "inotebookbackend"]
+	path = inotebookbackend
+	url = https://github.com/THARMATT/inotebookbackend.git
