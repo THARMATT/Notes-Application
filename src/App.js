@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route ,Outlet} from "react-router-dom";
 import Users from "./Components/Users";
 import Home from "./Components/Home";
 import About from "./Components/About";
+import Alert from "./Components/Alert";
 // import { useContext } from "react";
 import NoteState from "./Context/notes/NoteState.js";
 function App() {
@@ -12,13 +13,13 @@ function App() {
     <>
       <NoteState>
         <BrowserRouter>
-          {<Navbar />}
-          <Outlet />
+          <Navbar />
+     <Alert message="hey!!"/>
           <div className="container">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Users />} />
-            <Route path="/" element={<About />} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Users/>} />
+            <Route path="/" element={<About/>} />
           </Routes></div>
         </BrowserRouter>
       </NoteState>
