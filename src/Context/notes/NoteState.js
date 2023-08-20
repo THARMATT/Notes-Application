@@ -2,7 +2,7 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 import props from 'prop-types';
 // import { useState } from "react";
-const NoteState = (props) => {
+const NoteState = props => {
   const notesInitial = 
     [
         {
@@ -55,11 +55,36 @@ const NoteState = (props) => {
           "__v": 0
         }
       ]
-  
+   
 const[notes,setNotes]=useState(notesInitial)
+// add a note
+const addnote=(title,description)=>{
+ const note= {
+    "_id": "64df50d72c0f847d972a0caa",
+    "user": "64ddff93da38819de7b90ba5",
+    "title": title,
+    "description": description,
+    "__v": 0
+  };
+setNotes(notes.concat(note))
+}
+
+// delete a note 
+
+const deletenote=()=>{
+  
+}
+
+
+// edit a note 
+
+const editnote=()=>{
+  
+}
+
   return (
     // console.log("error")
-    <NoteContext.Provider value={{notes,setNotes}}>{props.children}</NoteContext.Provider>
+    <NoteContext.Provider value={{notes,addnote,deletenote,editnote}}>{props.children}</NoteContext.Provider>
   );
 };
 
