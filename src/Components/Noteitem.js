@@ -13,7 +13,7 @@ const Noteitem = (props) => {
             <h5 className="card-title">{note.title}</h5>
             <i
               className="fa-regular fa-trash-can mx-2"
-              onClick={() => {
+              onClick={()=>{
                 deleteNote(note._id);
               }}
             ></i>

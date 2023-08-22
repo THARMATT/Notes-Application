@@ -20,7 +20,7 @@ console.log(json)
 if(json.success){
     // redirect and sasve authtoken
     localStorage.setItem('token',json.authtoken)
-    navigate.push("/")
+    navigate("/")
      
 }
 else{
@@ -31,16 +31,16 @@ else{
         setCredentials({ ...credentials , [e.target.name]: e.target.value });
       };
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={handleSubmit}>
-  <div className="form-group">
-    <label htmlFor="enter your Email">Email address</label>
-    <input type="email" className="form-control" name="email" value={credentials.email} id="email" aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange}/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+  <div className="form-group my-2">
+    <label htmlFor="enter your Email my-2">Email address</label>
+    <input type="email" className="form-control my-2" name="email" value={credentials.email} id="email" aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange}/>
+   
   </div>
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Password</label>
-    <input type="password" className="form-control" value={credentials.password} name="password" id="password" placeholder="Password" onChange={onChange}/>
+    <input type="password" className="form-control my-2" value={credentials.password} name="password" id="password" placeholder="Password" onChange={onChange}/>
   </div>
   
   <button type="submit" className="btn btn-primary" >Submit</button>

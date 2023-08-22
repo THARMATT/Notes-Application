@@ -17,13 +17,13 @@ function App() {
       <NoteState>
         <BrowserRouter>
           <Navbar />
-          <Alert message="hey!!" />
+          {/* <Alert message="hey!!" /> */}
           {/* <Noteitem/> */}
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/users" element={<Users />} />
-              <Route path="/about" element={<About />} />
+              {/* <Route path="/about" element={<About />} /> */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
