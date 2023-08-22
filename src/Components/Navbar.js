@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import logo from './images/android-icon-36x36.png'
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  let navigate = useNavigate();
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate("/login")
+  }
   let location=useLocation();
   useEffect(()=>{
     console.log(location.pathname)
@@ -27,11 +33,11 @@ const Navbar = () => {
       
        
       </ul>
-      <form className="d-flex">
+     {!localStorage.getItem('token')? <form className="d-flex">
       
         <Link className='btn btn-primary mx-2' to="/login" role="button">Login</Link>
         <Link className='btn btn-primary mx-2'to='/signup' role="button">Signup</Link>
-      </form>
+      </form>: <Link onClick={handleLogout}className='btn btn-primary mx-2'to='/signup' role="button">Logout</Link>}
     </div>
   </div>
 </nav>

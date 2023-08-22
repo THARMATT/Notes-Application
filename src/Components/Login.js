@@ -20,11 +20,12 @@ console.log(json)
 if(json.success){
     // redirect and sasve authtoken
     localStorage.setItem('token',json.authtoken)
-    navigate("/")
-     
+  alert("login successfuly")
+    // props.showAlert("invalid credentials","danger")
+       navigate("/")
 }
 else{
-    alert("keep chnage")
+    alert("invalid credentials")
 }
     }
     const onChange = (e) => {
@@ -43,7 +44,7 @@ else{
     <input type="password" className="form-control my-2" value={credentials.password} name="password" id="password" placeholder="Password" onChange={onChange}/>
   </div>
   
-  <button type="submit" className="btn btn-primary" >Submit</button>
+  <button type="submit" className="btn btn-primary" >Login</button>
 </form>
     </div>
   )
