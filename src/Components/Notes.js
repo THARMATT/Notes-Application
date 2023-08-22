@@ -7,15 +7,15 @@ const Notes = () => {
   const context = useContext(noteContext);
    let navigate = useNavigate();
   const { notes, getNotes, editNote } = context;
-  useEffect(() => {
-    if(localStorage.getItem('token')){
-      getNotes()
-      // eslint-disable-next-line
-    }
-   else{
-    navigate("/login")
-   }
-  }, [])
+  // useEffect(() => {
+  //   if(localStorage.getItem('token')){
+  //     getNotes()
+  //     // eslint-disable-next-line
+  //   }
+  //  else{
+  //   navigate("/login")
+  //  }
+  // }, [])
   const ref = useRef(null)
   const refClose = useRef(null)
   const [note, setNote] = useState({ id: "", etitle: "", edescription: "" })
